@@ -1,6 +1,9 @@
-//Récupération des données Projets
+
+
+/////////////////////////////////////////////////    Générer fiches projets dynamiquement    ////////////////////////////////////////////////////////////////
+
 async function projectsData() {  //création de la fonction projectsData (donnéesProjets)
-    const response = await fetch('http://localhost:5678/api/work'); //requête de récupération des données works sur l'API et stockage dans response
+    const response = await fetch("http://localhost:5678/api/works"); //requête de récupération des données works sur l'API et stockage dans response
     if (!response.ok) { //si response = false .ok = vérifie si la requête à échouer en vérifiant le statut http
       console.log("Erreur lors de la requête à l'API"); //affichage dans la console si récup raté
     }
