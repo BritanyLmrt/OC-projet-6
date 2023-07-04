@@ -131,4 +131,7 @@ filterAll.addEventListener("click", function () { //ajout d'un ecouteur d'event
   displayProjects(); //Appel displayProjects (pour affichage de tous les projets)
 });
 
+/////////////////////////////////////////////////   Login   /////////////////////////////////////////////////////////////
+//voir API (POST)
+//Demander plus de détails sur la requête POST  à grégoire 
 

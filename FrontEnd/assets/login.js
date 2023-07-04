@@ -17,16 +17,25 @@ form.addEventListener("submit", function (event) {
     const reponse = sendApi(body); //function(body variable)
 })
 //Requête type POST 
-async function sendApi(obj){ //
+async function sendApi(obj) {
     const response = await fetch("http://localhost:5678/api/users/login", {
-        method : "post", // !post html action JS
-        headers: {
-            "Content-Type" : "application/json" //format 
-        }, 
-        body : JSON.stringify(obj) //objet à envoyer
-    } );//
-    if (!response.ok) { //si response = false .ok = vérifie si la requête à échouer en vérifiant le statut http
-      console.log("Erreur lors de la requête à l'API"); //affichage dans la console si récup raté
+      method: "post",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(obj)
+    });
+  
+    const userNotFound = {
+      errorCode: "404",
+      message: "User not found",
+      isRequestError: true
+    };
+  
+    if (!response.ok && userNotFound.isRequestError) {
+      alert("Utilisateur inexistant");
     }
+  
     return response;
-}
+  }
+  
