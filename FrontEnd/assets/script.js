@@ -79,10 +79,10 @@ async function getDataCategories() {
   return categoriesArray; //Retourne les éléments de réponses à cette fonction
 }
 let categoriesArray; //"Transforme" projectArray en variables de portée globale (Pour utiliser les données dans toutes les recettes)
-console.log(categoriesArray);
+console.log(categoriesArray); //affiche le tableau catégorie dans la console
 
-getDataCategories()
-  .then(() => displayCategories());
+getDataCategories() //appelle de cette fonction
+  .then(() => displayCategories()); //Quand fonction appeler, appelle de displayCategories
 
 
 //////////////////////////////////////////////////// Recette 1 : Génération dynamique des données de filtres récupérées via l'API
@@ -131,7 +131,22 @@ filterAll.addEventListener("click", function () { //ajout d'un ecouteur d'event
   displayProjects(); //Appel displayProjects (pour affichage de tous les projets)
 });
 
-/////////////////////////////////////////////////   Login   /////////////////////////////////////////////////////////////
-//voir API (POST)
-//Demander plus de détails sur la requête POST  à grégoire 
+document.addEventListener("DOMContentLoaded", function () { // ajout d'un ecouteur d'event quand le dom est chargé
+  // Récup les paramètres de l'URL
+  const params = new URLSearchParams(window.location.search); //récup des parametre dans l'url aprés le ? 
+  const editMode = params.get("editMode"); //stock des paramétres de l'editmode(url) dans editMode(constante)
 
+  // Vérifie si le mode édition est activé (et application des paramétres)
+  if (editMode === "true") { //si editMode est en true, 
+    const editModeWrapper = document.querySelector(".edit-mode"); // editmodewrapper = .edit-mode
+    const buttonModif = document.querySelector(".editing-btn"); // buttonModif = .editing-btn
+    
+    editModeWrapper.style.display = "flex"; //passe .editing-btn de none à flex
+    buttonModif.style.display = "flex"; //passe .editing-btn de none à flex 
+    console.log("Mode édition activé"); //Mode édition activé affiché dans la console
+
+  } else { //sinon
+    // Mode édition désactivé
+    console.log("Mode édition désactivé"); //affiche mode édition désactivé dans la console
+  }
+});

@@ -1,51 +1,89 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
 	<meta charset="UTF-8">
 	<title>Sophie Bluel - Architecte d'intérieur</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Work+Sans&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Work+Sans&display=swap"
+		rel="stylesheet">
 	<meta name="description" content="">
 	<link rel="stylesheet" href="./assets/style.css">
+	<script src="https://kit.fontawesome.com/f7853e1d8c.js" crossorigin="anonymous"></script>
+
+
 </head>
+
 <body>
-<header>
-	<h1>Sophie Bluel <span>ARCHITECTE D'INTÉRIEUR</span></h1>
-	<nav>
-		<ul>
-			<li><a href="index.html">projets</a></li>
-			<li><a href="#contact">contact</a></li>
-			<li><a href=login.html>login</a></li>
-			<li><img src="./assets/icons/instagram.png" alt="Instagram"></li>
-		</ul>
-	</nav>
-</header>
-<main>
-	<section id="introduction">
-		<figure>
-			<img src="./assets/images/sophie-bluel.png" alt="">
-		</figure>
-		<article>
-			<h2>Designer d'espace</h2>
-			<p>Je raconte votre histoire, je valorise vos idées. Je vous accompagne de la conception à la livraison finale du chantier.</p>
-			<p>Chaque projet sera étudié en commun, de façon à mettre en valeur les volumes, les matières et les couleurs dans le respect de l’esprit des lieux et le choix adapté des matériaux. Le suivi du chantier sera assuré dans le souci du détail, le respect du planning et du budget.</p>
-			<p>En cas de besoin, une équipe pluridisciplinaire peut-être constituée : architecte DPLG, décorateur(trice)</p>
-		</article>
-	</section>
-	<section id="portfolio">
-		<h2>Mes Projets</h2>
-		<div class="filterbar">
+	<div class="edit-mode">
+		<i class="fa-solid fa-pen-to-square"></i>
+		<p>Mode édition</p>
+		<button id="btn-publish">Publier les changements</button>
+	</div>
+	<header>
+		<h1>Sophie Bluel <span>ARCHITECTE D'INTÉRIEUR</span></h1>
+		<nav>
 			<ul>
-				<li class="filter-all">Tous</li>
-				<!--<li class="filter-object">Objets</li>
+				<li><a href="index.html">projets</a></li>
+				<li><a href="#contact">contact</a></li>
+				<li><a href=login.html>login</a></li>
+				<li><img src="./assets/icons/instagram.png" alt="Instagram"></li>
+			</ul>
+		</nav>
+	</header>
+	<main>
+		<section id="introduction">
+			<figure>
+				<img src="./assets/images/sophie-bluel.png" alt="">
+			</figure>
+			<article>
+				<h2>Designer d'espace</h2>
+				<p>Je raconte votre histoire, je valorise vos idées. Je vous accompagne de la conception à la livraison
+					finale du chantier.</p>
+				<p>Chaque projet sera étudié en commun, de façon à mettre en valeur les volumes, les matières et les
+					couleurs dans le respect de l’esprit des lieux et le choix adapté des matériaux. Le suivi du
+					chantier sera assuré dans le souci du détail, le respect du planning et du budget.</p>
+				<p>En cas de besoin, une équipe pluridisciplinaire peut-être constituée : architecte DPLG,
+					décorateur(trice)</p>
+			</article>
+		</section>
+		<section id="portfolio">
+			<div class="editing">
+				<h2>Mes Projets</h2>
+				<div class="editing-btn">
+					<a class="editing-btn href="#myModal"><i class="fa-solid fa-pen-to-square"></i>
+						<p>Modifier</p>
+					</a>
+				</div>
+				<div id="myModal" class="modal">
+					<div class="close"><i class="fa-solid fa-xmark"></i></div>
+					<div id="modal-add" class="modal-title">
+						<h3>Galerie photo</h3>
+					</div>
+					<div class="modal-content">
+						<div class="images"></div>
+					</div>
+					<div class="buttons-pos">
+						<div class="buttons">
+							<button class="btn-add-picture">Ajouter une photo</button>
+							<p class="btn-delete-gallery">Supprimez la galerie</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			</div>
+			<div class="filterbar">
+				<ul>
+					<li class="filter-all">Tous</li>
+					<!--<li class="filter-object">Objets</li>
 				<li class="filter-appartements">Appartements</li>
 				<li class="filter-hotel-and-restaurants">Hôtel & restaurants</li> -->
-			</ul>
-		</div>
-		<div id="project" class="gallery">
-			<!-- <figure>
+				</ul>
+			</div>
+			<div id="project" class="gallery">
+				<!-- <figure>
 				<img src="assets/images/abajour-tahina.png" alt="Abajour Tahina">
 				<figcaption>Abajour Tahina</figcaption>
 			</figure>
@@ -88,31 +126,33 @@
 			<figure>
 				<img src="assets/images/hotel-first-arte-new-delhi.png" alt="Hotel First Arte - New Delhi">
 				<figcaption>Hotel First Arte - New Delhi</figcaption>
-			</figure> --> 
-		</div>
-	</section>
-	<section id="contact">
-		<h2>Contact</h2>
-		<p>Vous avez un projet ? Discutons-en !</p>
-		<form action="#" method="post">
-			<label for="name">Nom</label>
-			<input type="text" name="name" id="name">
-			<label for="email">Email</label>
-			<input type="email" name="email" id="email">
-			<label for="message">Message</label>
-			<textarea name="message" id="message" cols="30" rows="10"></textarea>
-			<input type="submit" value="Envoyer" class="btn-submit">
-		</form>
-	</section>
-</main>
+			</figure> -->
+			</div>
+		</section>
+		<section id="contact">
+			<h2>Contact</h2>
+			<p>Vous avez un projet ? Discutons-en !</p>
+			<form action="#" method="post">
+				<label for="name">Nom</label>
+				<input type="text" name="name" id="name">
+				<label for="email">Email</label>
+				<input type="email" name="email" id="email">
+				<label for="message">Message</label>
+				<textarea name="message" id="message" cols="30" rows="10"></textarea>
+				<input type="submit" value="Envoyer" class="btn-submit">
+			</form>
+		</section>
+	</main>
 
-<footer>
-	<nav>
-		<ul>
-			<li>Mentions Légales</li>
-		</ul>
-	</nav>
-</footer>
-<script src="/FrontEnd/assets/script.js"></script>
+	<footer>
+		<nav>
+			<ul>
+				<li>Mentions Légales</li>
+			</ul>
+		</nav>
+	</footer>
+	<script src="/FrontEnd/assets/script.js"></script>
+	<script src="/FrontEnd/assets/modeEdit.js"></script>
 </body>
+
 </html>

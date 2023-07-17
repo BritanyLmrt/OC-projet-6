@@ -358,7 +358,8 @@ footer nav ul {
 	height: 51px;
 }
 
-#connexion-box label, a {
+#connexion-box label,
+a {
 	margin: 2em 0 1em 0;
 	font-family: Work Sans;
 	font-size: 14px;
@@ -373,6 +374,264 @@ footer nav ul {
 	border: none;
 	box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.09);
 }
+
 #connexion-box a {
 	text-decoration: underline;
+}
+
+.edit-mode {
+	display: none;
+	/**flex en JS**/
+	align-items: center;
+	justify-content: center;
+	gap: 10px;
+	height: 50px;
+	background-color: black;
+	color: white;
+}
+
+.edit-mode #btn-publish {
+	border-radius: 60px;
+	padding: 10px;
+}
+
+#portfolio .editing {
+	display: flex;
+	align-items: baseline;
+	justify-content: center;
+	gap: 30px;
+}
+
+.editing-btn {
+	display: none;
+	/**flex en JS**/
+	gap: 5px;
+	cursor: default;
+}
+
+.editing-btn a {
+	display: flex;
+	/**flex en JS**/
+	gap: 5px;
+}
+
+.modal {
+	width: 630px;
+	height: 731px;
+	display: none;
+	flex-direction: column;
+	position: fixed;
+	top: 20px;
+	background-color: white;
+	z-index: 1;
+	border-radius: 10px;
+	gap: 40px;
+}
+
+.modal h3 {
+	font-family: Work Sans;
+	font-size: 26px;
+	font-weight: 400;
+	text-align: center;
+}
+
+.modal p {
+	font-size: 12px;
+}
+
+.close {
+	height: 30px;
+	display: flex;
+	justify-content: end;
+}
+
+.fa-xmark {
+	font-size: 24px;
+	margin: 20px;
+}
+
+.modal img {
+	width: 76px;
+	height: 102px;
+}
+
+.modal figure {
+	width: 76px;
+	height: 120px;
+}
+
+.modal-content {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.images {
+	width: 70%;
+	display: flex;
+	flex-wrap: wrap;
+	gap: 10px;
+
+}
+
+.icn-box {
+	width: 20px;
+	height: 20px;
+	font-size: 14px;
+	color: white;
+	background-color: black;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: relative;
+	left: 50px;
+	top: 45px;
+}
+
+.icn-move {
+	width: 20px;
+	height: 20px;
+	font-size: 14px;
+	color: white;
+	background-color: black;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: relative;
+	left: 25px;
+	top: 25px;
+}
+
+.buttons {
+	width: 420px;
+	border-top: 1px solid #B3B3B3;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 20px;
+}
+
+.buttons-pos {
+	padding: 30px;
+	display: flex;
+	flex-direction: column;
+	text-align: center;
+	align-items: center;
+}
+
+.buttons p {
+	font-family: Syne;
+	font-size: 14px;
+	font-weight: 300;
+	text-align: center;
+	color: #D65353;
+}
+
+
+.btn-add-picture {
+	width: 237px;
+	font-family: 'Syne';
+	font-weight: 700;
+	font-size: 14px;
+	border-radius: 60px;
+	border: 1px #1D6154 solid;
+	padding: 10px 30px;
+	cursor: pointer;
+	color: white;
+	background-color: #1D6154;
+	margin-top: 30px;
+}
+
+#FormAddPicture {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 20px;
+}
+
+#FormAddPicture .add-photo {
+	width: 420px;
+	height: 169px;
+	border-radius: 3px;
+	background-color: #E8F1F6;
+	display: flex;
+	flex-direction: column;
+	gap: 2px;
+}
+
+#FormAddPicture p {
+	text-align: center;
+	font-family: Work Sans;
+	font-size: 10px;
+	font-weight: 400;
+	text-align: center;
+	margin-top: 5px;
+	margin-bottom: 20px;
+	color: #444444;
+}
+
+.photo-input-label {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: flex-start;
+	gap: 8px;
+}
+
+.fa-image {
+	font-size: 58px;
+	color: #B9C5CC;
+}
+
+.photo-button {
+	width: 173px;
+	height: 36px;
+	border-radius: 50px;
+	background-color: #CBD6DC;
+	color: #306685;
+	font-family: Work Sans;
+	font-size: 14px;
+	font-weight: 500;
+	text-align: center;
+	border: none;
+}
+
+#photoInput {
+	display: none;
+}
+
+#FormAddPicture .title-photo,
+.category-photo {
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+
+}
+
+#categorySelect,
+#titleInput {
+	width: 420px;
+	height: 51px;
+	box-shadow: 0px 4px 14px 0px #00000017;
+	border: none;
+	color: #3D3D3D;
+}
+
+option {
+	background-color: white;
+}
+
+label {
+	color: #3D3D3D;
+}
+#FormAddPicture .buttons {
+	margin-top: 32px;
+}
+.arrow-pos { 
+display: flex;
+justify-content: space-between;
+}
+.fa-arrow-left {
+	margin : 20px;
+	font-size: 21px;
 }
