@@ -415,6 +415,12 @@ a {
 	gap: 5px;
 }
 
+.modif-project {
+	display: flex;
+	flex-direction: column;
+	gap: 40px;
+}
+
 .modal {
 	width: 630px;
 	height: 731px;
@@ -423,9 +429,9 @@ a {
 	position: fixed;
 	top: 20px;
 	background-color: white;
-	z-index: 1;
+	z-index: 2;
 	border-radius: 10px;
-	gap: 40px;
+
 }
 
 .modal h3 {
@@ -439,15 +445,13 @@ a {
 	font-size: 12px;
 }
 
-.close {
-	height: 30px;
-	display: flex;
-	justify-content: end;
-}
 
 .fa-xmark {
 	font-size: 24px;
 	margin: 20px;
+	height: 30px;
+	display: flex;
+	justify-content: end;
 }
 
 .modal img {
@@ -488,19 +492,7 @@ a {
 	top: 45px;
 }
 
-.icn-move {
-	width: 20px;
-	height: 20px;
-	font-size: 14px;
-	color: white;
-	background-color: black;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	position: relative;
-	left: 25px;
-	top: 25px;
-}
+
 
 .buttons {
 	width: 420px;
@@ -542,6 +534,38 @@ a {
 	margin-top: 30px;
 }
 
+.btn-submit {
+	width: 237px;
+	font-family: 'Syne';
+	font-weight: 700;
+	font-size: 14px;
+	border-radius: 60px;
+	border: 1px #1D6154 solid;
+	padding: 10px 30px;
+	cursor: pointer;
+	color: white;
+	background-color: #1D6154;
+	margin-top: 30px;
+}
+
+/* Style pour le bouton désactivé */
+.btn-submit.btn-disabled {
+	background-color: grey;
+	border-color: grey;
+
+	/* Autres styles si nécessaire */
+}
+
+
+
+
+.formulaire {
+	display: none;
+	flex-direction: column;
+	gap: 20px;
+
+}
+
 #FormAddPicture {
 	display: flex;
 	flex-direction: column;
@@ -570,13 +594,14 @@ a {
 	color: #444444;
 }
 
-.photo-input-label {
+.custom-file-button {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 	justify-content: flex-start;
 	gap: 8px;
 }
+
 
 .fa-image {
 	font-size: 58px;
@@ -624,14 +649,72 @@ option {
 label {
 	color: #3D3D3D;
 }
+
 #FormAddPicture .buttons {
 	margin-top: 32px;
 }
-.arrow-pos { 
-display: flex;
-justify-content: space-between;
+
+.buttons-modal {
+	display: flex;
+	justify-content: space-between;
+	flex-direction: row-reverse;
 }
+
 .fa-arrow-left {
-	margin : 20px;
+	display: none;
+	justify-content: space-between;
+	margin: 20px;
 	font-size: 21px;
 }
+
+.overlay {
+	display: none;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100vw;
+	height: 100vh;
+	background-color: rgba(0, 0, 0, 0.5);
+}
+
+#preview {
+	width: 129px;
+	height: 192px;
+	display: none;
+}
+
+#imagePreviewContainer {
+	width: 420px;
+	height: 193px;
+	display: flex;
+	justify-content: center;
+	align-items: flex-start;
+}
+
+.icn-move {
+	width: 20px;
+	height: 20px;
+	font-size: 14px;
+	color: white;
+	background-color: black;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: relative;
+	left: 25px;
+	top: 25px;
+	visibility: hidden;
+}
+
+.modif-picture{
+	display: flex;
+	flex-direction: column;
+
+}
+.modif-picture .btn-modifier {
+	display: none; 
+	position: relative;
+	left: 56px;
+	gap: 5px;
+}
+

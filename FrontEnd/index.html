@@ -17,6 +17,7 @@
 </head>
 
 <body>
+	<div class="overlay"></div>
 	<div class="edit-mode">
 		<i class="fa-solid fa-pen-to-square"></i>
 		<p>Mode édition</p>
@@ -35,8 +36,14 @@
 	</header>
 	<main>
 		<section id="introduction">
-			<figure>
+			<figure class="modif-picture">
 				<img src="./assets/images/sophie-bluel.png" alt="">
+				<div>
+					<a class="btn-modifier" href="#">
+						<i class="fa-solid fa-pen-to-square"></i>
+						<p>Modifier</p>
+					</a>
+				</div>
 			</figure>
 			<article>
 				<h2>Designer d'espace</h2>
@@ -53,26 +60,67 @@
 			<div class="editing">
 				<h2>Mes Projets</h2>
 				<div class="editing-btn">
-					<a class="editing-btn href="#myModal"><i class="fa-solid fa-pen-to-square"></i>
+					<a class="editing-btn" href="#myModal">
+						<i class="fa-solid fa-pen-to-square"></i>
 						<p>Modifier</p>
 					</a>
 				</div>
 				<div id="myModal" class="modal">
-					<div class="close"><i class="fa-solid fa-xmark"></i></div>
-					<div id="modal-add" class="modal-title">
-						<h3>Galerie photo</h3>
+					<div class="buttons-modal">
+						<i class="fa-solid fa-xmark close"></i>
+						<i class="fa-solid fa-arrow-left arrow-pos"></i>
 					</div>
-					<div class="modal-content">
-						<div class="images"></div>
-					</div>
-					<div class="buttons-pos">
-						<div class="buttons">
-							<button class="btn-add-picture">Ajouter une photo</button>
-							<p class="btn-delete-gallery">Supprimez la galerie</p>
+					<div class="modif-project">
+						<div class="modal-title">
+							<h3>Galerie photo</h3>
+						</div>
+						<div class="modal-content">
+							<div class="images"></div>
+						</div>
+						<div class="buttons-pos">
+							<div class="buttons">
+								<button class="btn-add-picture">Ajouter une photo</button>
+								<p class="btn-delete-gallery">Supprimez la galerie</p>
+							</div>
 						</div>
 					</div>
+
+					<div class="formulaire">
+						<h3>Ajout photo</h3>
+						<form id="FormAddPicture" enctype="multipart/form-data">
+							<div class="add-photo">
+								<label for="photoInput" class="custom-file-button">
+									<span class="label-icon" id="imageIcon"><i class="fa-regular fa-image"></i></span>
+									<input type="file" onchange="ImgPreview(this)" id="photoInput" name="photo"
+										accept="image/jpeg, image/png" required>
+									<input type="button" value="+ Ajouter photo" class="photo-button"
+										id="addPhotoButton">
+								</label>
+								<p class="consign">jpg, png : 4 Mo max</p>
+								<div id="imagePreviewContainer">
+									<img id="preview">
+								</div>
+							</div>
+							<div class="title-photo">
+								<label for="titleInput">Titre</label>
+								<input type="text" id="titleInput" name="title" required>
+							</div>
+							<div class="category-photo">
+								<label for="categorySelect">Catégorie</label>
+								<select id="categorySelect" name="category" placeholder="Catégorie" required>
+									<option value="" disabled selected hidden>Choisissez une catégorie</option>
+									<option value="1">Objets</option>
+									<option value="2">Appartements</option>
+									<option value="3">Hôtels & restaurants</option>
+								</select>
+							</div>
+							<div class="buttons">
+								<button type="submit" id="submitButton" class="btn-submit">Valider</button>
+							</div>
+						</form>
+
+					</div>
 				</div>
-			</div>
 			</div>
 			<div class="filterbar">
 				<ul>
