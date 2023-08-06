@@ -221,8 +221,8 @@ function addProject() {
 
     const formData = new FormData(); // Créer un nouvel objet FormData pour contenir les données du formulaire (ajouter au corps de la requête)
 
-    formData.append("title", document.getElementById("titleInput").value); //append() ajoute paires clés-valeurs à formData(données form) envoyé aprés à l'API
-    formData.append("image", document.getElementById("photoInput").files[0]);
+    formData.append("title", document.getElementById("titleInput").value); //append() ajoute paires clés-valeurs à 
+    formData.append("image", document.getElementById("photoInput").files[0]); //formData(données form) envoyé aprés à l'API
     formData.append("category", document.getElementById("categorySelect").value);
 
     sendApi(formData); // Envoie la requête POST à l'API
